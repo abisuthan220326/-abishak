@@ -37,7 +37,7 @@ function displayMaterials() {
             : '';
         
         card.innerHTML = `
-            <img src="images/${material.image}" 
+            <img src="${material.image}" 
                  alt="${material.name}" 
                  class="material-image"
                  onerror="this.src='https://via.placeholder.com/200x200?text=${material.name.charAt(0)}'">
