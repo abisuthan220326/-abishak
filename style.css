@@ -1,0 +1,560 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Popup Animation for Material Cards */
+@keyframes popupAnimate {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(50px);
+    }
+    50% {
+        transform: scale(1.05) translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Bounce Animation for Rate */
+@keyframes rateBounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.header {
+    background: rgba(33, 33, 33, 0.95);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.nav-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.homepage-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    border: 4px solid #f39c12;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #f39c12;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.main-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.about-section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.about-text {
+    color: #34495e;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.product-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.product-btn {
+    display: inline-block;
+    background: #f39c12;
+    color: white;
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.product-btn:hover {
+    background: #e67e22;
+    transform: scale(1.05);
+}
+
+.products-section h2 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Material Card with Popup Animation */
+.material-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    /* Apply popup animation */
+    animation: popupAnimate 0.6s ease-out forwards;
+    opacity: 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.material-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #f39c12, #e67e22);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.material-card:hover::before {
+    opacity: 1;
+}
+
+.material-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.material-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.material-card:hover .material-image {
+    transform: scale(1.05);
+}
+
+.material-card h3 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Rate with Bounce Animation on Hover */
+.material-card .rate {
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 2rem;
+    animation: rateBounce 0.5s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+.material-card:hover .rate {
+    animation: rateBounce 0.3s ease-in-out infinite;
+}
+
+.address-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.address-btn {
+    display: inline-block;
+    background: #27ae60;
+    color: white;
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.address-btn:hover {
+    background: #229954;
+    transform: scale(1.05);
+}
+
+.address-details {
+    text-align: center;
+}
+
+.address-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.address-card h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+.address-info {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.address-label {
+    color: #34495e;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.address-value {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.map-section {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.map-section h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.map-placeholder {
+    background: #f0f0f0;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.map-link {
+    color: #f39c12;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-btn {
+    background: #95a5a6;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.back-btn:hover {
+    background: #7f8c8d;
+    transform: translateX(-5px);
+}
+
+.footer {
+    background: rgba(33, 33, 33, 0.95);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .homepage-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .nav-header {
+        flex-direction: column;
+    }
+
+    .materials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .material-image {
+        height: 180px;
+    }
+/* ========== TAGLINE STYLE (BOLD UNDER LOGO) ========== */
+.tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
+    animation: fadeInTagline 1s ease-out;
+}
+
+@keyframes fadeInTagline {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== QUOTE SECTION STYLE ========== */
+.quote-section {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.quote-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.quote-text {
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 600;
+    line-height: 1.6;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .tagline {
+        font-size: 1.1rem;
+    }
+
+    .quote-text {
+        font-size: 1rem;
+    }
+/* ========== FEATURES SECTION (Best Quality, Best Price) ========== */
+.features-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid #f0f0f0;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    border-color: #f39c12;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    color: #2c3e50;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.feature-card p {
+    color: #7f8c8d;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .features-section {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        padding: 25px 15px;
+    }
+
+    .feature-icon {
+        font-size: 2.5rem;
+    }
+
+    .feature-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+/* ========== FLOATING WHATSAPP BUTTON ========== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    animation: pulseWhatsApp 2s infinite;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+}
+
+/* Pulse Animation */
+@keyframes pulseWhatsApp {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-icon {
+        width: 28px;
+        height: 28px;
+    }
+/* ========== RATE UNIT TEXT (per piece, per bag, etc.) ========== */
+.rate-unit {
+    font-size: 1rem;
+    color: #7f8c8d;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+/* ========== EDIT RATE BUTTON (Hidden by default) ========== */
+.edit-rate-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.edit-rate-btn:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .rate-unit {
+        font-size: 0.85rem;
+    }
+}
