@@ -5,7 +5,7 @@ let materials = [
     { name: 'M-SAND', rate: 5300, unit: 'cubic foot', image: 'm-sand.jpg' },
     { name: 'RED BRICKS', rate: 10, unit: 'piece', image: 'red-bricks.jpg' },
     { name: 'CEMENT', rate: 300, unit: 'bag', image: 'cement.jpg' },
-    { name: 'AAC BLOCKS', rate: 54 to 115, unit: 'piece', image: 'aac-blocks.jpg' }
+    { name: 'AAC BLOCKS', rate: 54, unit: 'piece', image: 'aac-blocks.jpg' }
 ];
 
 // Track if admin mode is enabled
