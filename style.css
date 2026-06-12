@@ -78,7 +78,7 @@ body {
     border-radius: 15px;
     border: 4px solid #f39c12;
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.5);
 }
 
 .header h1 {
@@ -352,7 +352,7 @@ body {
     }
 /* ========== TAGLINE STYLE (BOLD UNDER LOGO) ========== */
 .tagline {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Oswald', 'Arial Black';
     font-size: 1.5rem;
     color: white;
     font-weight: 700;
@@ -390,7 +390,7 @@ body {
 }
 
 .quote-text {
-    font-size: 1.3rem;
+    font-size: 5 rem;
     color: white;
     font-weight: 600;
     line-height: 1.6;
@@ -557,4 +557,40 @@ body {
     .rate-unit {
         font-size: 0.85rem;
     }
+/* ========== SPECIAL FONT FOR JALLI, SAND, CEMENT in About Section ========== */
+.special-material {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #d35400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+/* ========== FLOATING CALL BUTTON ========== */
+.call-float {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #e74c3c;
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.call-float:hover {
+    background: #c0392b;
+    transform: scale(1.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
 }
