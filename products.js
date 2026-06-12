@@ -1,11 +1,11 @@
 let materials = [
-    { name: '1 1/2 JALLI', rate: 2500, unit: 'cubic foot', image: 'jalli-1-5.jpg' },
-    { name: '3/4 JALLI', rate: 2800, unit: 'cubic foot', image: 'jalli-3-4.jpg' },
-    { name: 'P-SAND', rate: 1800, unit: 'cubic foot', image: 'p-sand.jpg' },
-    { name: 'M-SAND', rate: 1600, unit: 'cubic foot', image: 'm-sand.jpg' },
-    { name: 'RED BRICKS', rate: 8, unit: 'piece', image: 'red-bricks.jpg' },
-    { name: 'CEMENT', rate: 420, unit: 'bag', image: 'cement.jpg' },
-    { name: 'AAC BLOCKS', rate: 65, unit: 'piece', image: 'aac-blocks.jpg' }
+    { name: '1 1/2 JALLI', rate: 4300, unit: 'cubic foot', image: 'jalli-1-5.jpg' },
+    { name: '3/4 JALLI', rate: 4400, unit: 'cubic foot', image: 'jalli-3-4.jpg' },
+    { name: 'P-SAND', rate: 6300, unit: 'cubic foot', image: 'p-sand.jpg' },
+    { name: 'M-SAND', rate: 5300, unit: 'cubic foot', image: 'm-sand.jpg' },
+    { name: 'RED BRICKS', rate: 10, unit: 'piece', image: 'red-bricks.jpg' },
+    { name: 'CEMENT', rate: 300, unit: 'bag', image: 'cement.jpg' },
+    { name: 'AAC BLOCKS', rate: 54 to 115, unit: 'piece', image: 'aac-blocks.jpg' }
 ];
 
 // Track if admin mode is enabled
