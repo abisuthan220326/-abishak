@@ -593,4 +593,11 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
+.about-text {
+    color: #34495e;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
 }
